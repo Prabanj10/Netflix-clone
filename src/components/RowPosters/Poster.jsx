@@ -1,14 +1,34 @@
 import './poster.css';
+import axios from '../../axios';
+import { useEffect, useState } from 'react';
+import { imageUrl } from '../../constants/constants';
+
+const apikey = import.meta.env.VITE_API_KEY;
 
 const Poster = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`/discover/movie?api_key=${apikey}&with_genres=28`)
+      .then((res) => {
+        console.log(res.data.results);
+        setMovies(res.data.results);
+      });
+  }, []);
+
   return (
-    <div >
-      <h2 className='category'>New Release</h2>
-      <div className='posters'>
-      <img className='poster'
-        src="https://images.squarespace-cdn.com/content/v1/59232e19579fb3fa44a693c2/1589212826160-UM9PEPGOS3OJPR0FJ81X/ke17ZwdGBToddI8pDm48kHZUaJeKzodyg_sXWBMxNTdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxCBUU7B-_SAG1kGvCwYgmUjQXvn8_OJjtz3K1llMQBa1MPsuSXPSY3X-tgg78M7lI/SKOyqL1qFLIhbK6ho2lB-696x975.jpg?format=1500w"
-        alt=""
-      />
+    <div>
+      <h2 className="category">New Release</h2>
+      <div className="posters">
+        {movies.map((movie) => (
+          <img
+            key={movie.id}
+            className="poster"
+            src={`${imageUrl + movie.backdrop_path}`}
+            alt=""
+          />
+        ))}
       </div>
     </div>
   );
