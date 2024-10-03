@@ -17,10 +17,20 @@
 }
 
 .poster{
-    display: flex;
-    max-height: 200px;
+    max-height: 220px;
     margin-right: 10px;
+    cursor: pointer;
     
     
 
 }
+
+.smallPoster{
+    max-height: 120px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.poster:hover {
+    transform: scale(1.2); /* increase size by 10% */
+  }
