@@ -12,7 +12,7 @@
 }
 
 .logo{
-    width: 100px;
+    width: 120px;
     position: fixed;
     left: 20px;
     top: 0;
@@ -21,9 +21,33 @@
 }
 
 .avatar{
-    width: 30px;
+    width: 32px;
     position: fixed;
     right :20px;
+    margin-top: -2px;
     
 }
 
+
+@media (max-width:767px){
+    .navbar{
+        
+        height: 15px;
+        
+    }
+    
+    .logo{
+        width: 95px;
+        position: fixed;
+        left: 10px;
+        
+    }
+    
+    .avatar{
+        width: 25px;
+        right :15px;
+        margin-top: -3px;
+        
+    }
+
+}

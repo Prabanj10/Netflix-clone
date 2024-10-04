@@ -65,3 +65,19 @@
     opacity: 80%;
 
   }
+
+  @media (max-width: 767px) {
+    /* Mobile styles */
+    .poster{
+        max-height: 140px;
+        margin-right: 10px;
+    }
+    .smallPoster{
+        max-height: 80px;
+        margin-right: 10px;
+
+    }
+    h2{
+        font-size: 16px;
+    }
+  }
