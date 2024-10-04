@@ -34,3 +34,32 @@
 .poster:hover {
     transform: scale(1.2); /* increase size by 10% */
   }
+
+  .close{
+    position: absolute;
+    margin: 13px;
+    padding: 2.2px 8.5px 3.3px;
+    right: 180px;
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    opacity: 80%;
+  }
+
+  .close:hover{
+    opacity: 100%;
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+    
+  }
+
+  .closetext{
+    position: absolute;
+    margin-top: 42px;
+    color: white;
+    right: 185px;
+    opacity: 80%;
+
+  }

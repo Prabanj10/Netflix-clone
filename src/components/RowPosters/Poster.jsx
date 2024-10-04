@@ -10,11 +10,12 @@ const Poster = (props) => {
   const [movies, setMovies] = useState([]);
   const [movieId, setMovieId] = useState('');
   const [youtubeId, setYoutubeId] = useState('');
+  const [showVideo,setShowVideo]=useState(true)
   const opts = {
     height: '390',
     width: '100%',
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
     },
   };
 
@@ -31,12 +32,19 @@ const Poster = (props) => {
       )
       .then((res) => {
         if (res.data.results.length !== 0) {
-          setYoutubeId(res.data.results[0].key);
+          setYoutubeId(res.data.results[1].key);
         } else {
           console.log('No videos Avilable');
         }
       });
   };
+
+  const handleClose=()=>{
+
+    setShowVideo(false)
+
+
+  }
 
   return (
     <div>
@@ -49,18 +57,25 @@ const Poster = (props) => {
             src={`${imageUrl + movie.backdrop_path}`}
             alt=""
             onClick={() => {
+              setShowVideo(true)
               handleChange(movie.id);
               setYoutubeId('');
+
             }}
           />
         ))}
       </div>
-      {youtubeId && (
+      {showVideo&&youtubeId && (
         <div>
+        <div className='closebox'>
+        <p className='close' onClick={handleClose}>x</p>
+        <h4 className='closetext'>close</h4>
+        </div>
           <YouTube
             videoId={youtubeId}
             opts={opts}
           />
+          
         </div>
       )}
     </div>
