@@ -6,7 +6,7 @@
 
 .posters{
     display: flex;
-    padding: 20px;
+    padding: 18px;
     overflow-y: hidden;
     overflow-x: scroll;
 
@@ -32,9 +32,11 @@
 }
 
 .poster:hover {
-    transform: scale(1.2); /* increase size by 10% */
+    transform: scale(1.11); /* increase size by 10% */
   }
-
+  .smallPoster:hover {
+    transform: scale(1.11); /* increase size by 10% */
+  }
   .close{
     position: absolute;
     margin: 13px;
