@@ -28,6 +28,66 @@
     
 }
 
+.searchBox{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    right: 150px;
+
+}
+
+.searchBar{
+    width: 290px;
+    height: 30px;
+    border-radius: 3px;
+    border-width:0px;
+    outline-width: 0px;
+    font-size: 19px;
+    padding-left: 10px;
+    opacity: 50%;
+    
+    
+    
+    
+}
+
+.searchBar:hover{
+    opacity: 100%;
+}
+
+
+.searchResult{
+    color: white;
+    margin-top: 10px;
+    
+}
+
+.resultBox{
+    background-color: rgb(114, 113, 113);
+    display: flex;
+    padding: 4px;
+    border-width:1px ;
+    border-color: black;
+    border-style: solid ;
+    opacity: 80%;
+
+}
+
+.resultBox:hover{
+    opacity: 100%;
+}
+
+.resultTitle{
+    padding-left: 3px;
+    padding-top: 3px;
+    font-size: 15px;
+
+}
+
+.resultImage{
+    width: 100;
+    height: 50px;
+}
 
 @media (max-width:767px){
     .navbar{
